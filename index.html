@@ -23,22 +23,6 @@
             }
 
 
-.leaflet-control-compass {
-      background: white;
-      padding: 5px;
-      border-radius: 4px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.3);
-      text-align: center;
-      font-size: 14px;
-      font-weight: bold;
-    }
-    .compass-arrow {
-      display: block;
-      font-size: 20px;
-      transform-origin: center;
-      transition: transform 0.2s ease;
-    }
-
 
      </style>
 
@@ -128,33 +112,6 @@ function onMapClick(e) {
 
 map.on('click', onMapClick);
 
-
-// Compass
-
-// Custom Compass Control
-    const CompassControl = L.Control.extend({
-      onAdd: function() {
-        const container = L.DomUtil.create('div', 'leaflet-control-compass');
-        container.innerHTML = '<span class="compass-arrow">🧭</span>';
-        this.arrow = container.querySelector('.compass-arrow');
-        return container;
-      },
-      setHeading: function(angle) {
-        if (this.arrow) {
-          this.arrow.style.transform = `rotate(${angle}deg)`;
-        }
-      }
-    });
-
-    const compass = new CompassControl({ position: 'topright' });
-    map.addControl(compass);
-
-    Simulate heading updates (replace with real device orientation if needed)
-    let heading = 0;
-    setInterval(() => {
-      heading = (heading + 10) % 360;
-      compass.setHeading(heading);
-    }, 1000);
 
 // Here's how to make circles with a specific radius and other attributes plus a popup bubble! 
 // Note the new circle variable like 'circleOrilliaStart' 
@@ -3656,5 +3613,6 @@ var polyline = L.polyline(latlngs, {color: 'mediumvioletred', weight: 6}).addTo(
 </script>
 
 </html>
+
 
 
