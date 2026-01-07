@@ -150,11 +150,11 @@ map.on('click', onMapClick);
     map.addControl(compass);
 
     // Simulate heading updates (replace with real device orientation if needed)
-    let heading = 0;
-    setInterval(() => {
-      heading = (heading + 10) % 360;
-      compass.setHeading(heading);
-    }, 1000);
+    //let heading = 0;
+    //setInterval(() => {
+      //heading = (heading + 10) % 360;
+      //compass.setHeading(heading);
+    //}, 1000);
 
 
 // Here's how to make circles with a specific radius and other attributes plus a popup bubble! 
@@ -3655,4 +3655,5 @@ var latlngs = [
 var polyline = L.polyline(latlngs, {color: 'mediumvioletred', weight: 6}).addTo(map);
 
 </script>
+
 </html>
